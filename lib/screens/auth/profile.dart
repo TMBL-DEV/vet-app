@@ -75,7 +75,7 @@ class _ProfileState extends State<Profile> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  user.userName.length > 0 ? user.userName : "John doe",
+                  user.userName != null ? user.userName : "John doe",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w300,
