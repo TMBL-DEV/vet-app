@@ -46,19 +46,20 @@ class _CreateVetjeState extends State<CreateVetje> {
                   decoration: InputDecoration(
                       icon: new Icon(Icons.food_bank),
                       labelText: "Naam van het vetje"),
+                  obscureText: true,
                 ),
                 SizedBox(height: 10.0),
                 TextFormField(
                   onSaved: (String value) {
                     if (value.isEmpty) {
-                      return "frituur tijdspan is verplicht";
+                      return "wachtwoord verplicht";
                     }
 
                     this._fryingDuration = value;
                   },
                   decoration: InputDecoration(
                     icon: new Icon(Icons.timelapse),
-                    labelText: "Tijds span in frituur (minuten)",
+                    labelText: "wachtwoord",
                   ),
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
