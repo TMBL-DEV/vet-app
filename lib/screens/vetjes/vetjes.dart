@@ -36,22 +36,5 @@ class _VetjesState extends State<Vetjes> {
         );
       },
     );
-
-    // return SafeArea(
-    //   child: Column(
-    //     children: [
-    //       SizedBox(height: 30.0),
-    //       Center(
-    //         child: Text(
-    //           "hallo",
-    //           style: TextStyle(
-    //             color: Colors.grey[900],
-    //             fontSize: 28,
-    //           ),
-    //         ),
-    //       )
-    //     ],
-    //   ),
-    // );
   }
 }

@@ -20,69 +20,71 @@ class _CreateVetjeState extends State<CreateVetje> {
         title: Text("Vetje aanmaken"),
       ),
       body: SafeArea(
-          child: Center(
-        child: Form(
-          key: _formKey,
-          child: Container(
-            width: 350,
-            child: Column(
-              children: [
-                SizedBox(height: 40.0),
-                Center(
+        child: Center(
+          child: Form(
+            key: _formKey,
+            child: Container(
+              width: 350,
+              child: Column(
+                children: [
+                  SizedBox(height: 40.0),
+                  Center(
                     child: Text(
-                  "Vetje",
-                  style: TextStyle(
-                    color: Colors.grey[900],
-                    fontSize: 28,
+                      "Vetje",
+                      style: TextStyle(
+                        color: Colors.grey[900],
+                        fontSize: 28,
+                      ),
+                    ),
                   ),
-                )),
-                TextFormField(
-                  onSaved: (String value) {
-                    if (value.isEmpty) {
-                      return "Naam is verplicht";
-                    }
-                    this._name = value;
-                  },
-                  decoration: InputDecoration(
-                      icon: new Icon(Icons.food_bank),
-                      labelText: "Naam van het vetje"),
-                  obscureText: true,
-                ),
-                SizedBox(height: 10.0),
-                TextFormField(
-                  onSaved: (String value) {
-                    if (value.isEmpty) {
-                      return "wachtwoord verplicht";
-                    }
+                  TextFormField(
+                    onSaved: (String value) {
+                      if (value.isEmpty) {
+                        return "Naam is verplicht";
+                      }
+                      this._name = value;
+                    },
+                    decoration: InputDecoration(
+                        icon: new Icon(Icons.food_bank),
+                        labelText: "Naam van het vetje"),
+                    obscureText: true,
+                  ),
+                  SizedBox(height: 10.0),
+                  TextFormField(
+                    onSaved: (String value) {
+                      if (value.isEmpty) {
+                        return "tijdspan";
+                      }
 
-                    this._fryingDuration = value;
-                  },
-                  decoration: InputDecoration(
-                    icon: new Icon(Icons.timelapse),
-                    labelText: "wachtwoord",
+                      this._fryingDuration = value;
+                    },
+                    decoration: InputDecoration(
+                      icon: new Icon(Icons.timelapse),
+                      labelText: "Tijd in frituur",
+                    ),
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   ),
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                ),
-                SizedBox(height: 20.0),
-                IconButton(
-                  icon: new Icon(Icons.save),
-                  onPressed: () {
-                    print("saving");
-                    if (!_formKey.currentState.validate()) {
-                      return;
-                    }
-                    _formKey.currentState.save();
-                    print(_name);
-                  },
-                  color: Colors.green[800],
-                  iconSize: 40,
-                )
-              ],
+                  SizedBox(height: 20.0),
+                  IconButton(
+                    icon: new Icon(Icons.save),
+                    onPressed: () {
+                      print("saving");
+                      if (!_formKey.currentState.validate()) {
+                        return;
+                      }
+                      _formKey.currentState.save();
+                      print(_name);
+                    },
+                    color: Colors.green[800],
+                    iconSize: 40,
+                  )
+                ],
+              ),
             ),
           ),
         ),
-      )),
+      ),
     );
   }
 }

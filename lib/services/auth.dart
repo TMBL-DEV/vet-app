@@ -22,7 +22,6 @@ class AuthService {
 
       return user;
     } catch (error) {
-      print(error.code);
       return error.code;
     }
   }

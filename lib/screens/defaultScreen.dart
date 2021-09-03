@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vetApp/screens/auth/profile.dart';
 import 'package:vetApp/screens/home.dart';
+import 'package:vetApp/screens/timer.dart';
 import 'package:vetApp/screens/vetjes/create.dart';
 import 'package:vetApp/screens/vetjes/vetjes.dart';
 
@@ -32,9 +33,17 @@ class _DefaultScreenState extends State<DefaultScreen> {
   @override
   Widget build(BuildContext context) {
     List<FloatingActionButton> _buttons = [
-      null,
       FloatingActionButton(
-        child: const Icon(Icons.navigation),
+        child: const Icon(Icons.timer),
+        backgroundColor: Colors.green,
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return Timer();
+          }));
+        },
+      ),
+      FloatingActionButton(
+        child: const Icon(Icons.add),
         backgroundColor: Colors.green,
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
